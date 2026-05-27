@@ -13,15 +13,25 @@ CREDENTIALS_PATH = 'credentials.json'
 SHEET_ID         = '1bPgYjBtf4Rx7dcXueF4TrOZZaGsq8BBcXZDk63L28bs'
 
 @st.cache_resource
+@st.cache_resource
 def connect_to_sheets():
-    """Connect to Google Sheets and return both sheets."""
     scope = [
         'https://spreadsheets.google.com/feeds',
         'https://www.googleapis.com/auth/drive'
     ]
-    creds  = Credentials.from_service_account_file(CREDENTIALS_PATH, scopes=scope)
+    # Use Streamlit secrets when deployed, local file when running locally
+    try:
+        creds = Credentials.from_service_account_info(
+            dict(st.secrets["gcp_service_account"]),
+            scopes=scope
+        )
+    except:
+        creds = Credentials.from_service_account_file(
+            CREDENTIALS_PATH,
+            scopes=scope
+        )
     client = gspread.authorize(creds)
-    book   = client.open_by_key(SHEET_ID)
+    book = client.open_by_key(SHEET_ID)
     return book.sheet1, book.worksheet('users_sheet')
 
 
