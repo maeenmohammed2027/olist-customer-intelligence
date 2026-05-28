@@ -1,9 +1,27 @@
+# Web Application
 streamlit
-vaderSentiment
-pandas
+
+# Google Sheets Integration
 gspread
 google-auth
-scikit-learn
+
+# NLP & Sentiment Analysis
+vaderSentiment
+deep-translator
+
+# Data Processing
+pandas
 numpy
+
+# Machine Learning
+scikit-learn
+
+# Visualization
 matplotlib
+seaborn
+
+# Email Automation
 schedule
+
+# Database
+psycopg2-binary
