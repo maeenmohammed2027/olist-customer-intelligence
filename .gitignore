@@ -1,0 +1,25 @@
+# Credentials — NEVER upload
+credentials.json
+
+# Data files
+data/
+outputs/
+
+# Power BI
+*.pbix
+
+# Python
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+
+# Mac
+.DS_Store
+.DS_Store?
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
