@@ -8,6 +8,7 @@ google-auth
 # NLP & Sentiment Analysis
 vaderSentiment
 deep-translator
+wordcloud
 
 # Data Processing
 pandas
